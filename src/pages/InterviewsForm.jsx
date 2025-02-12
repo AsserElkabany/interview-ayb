@@ -32,7 +32,7 @@ function Interviews_form() {
        <header style={{ backgroundColor: "#8b0000", padding: "20px", color: "#fff", textAlign: "center" }}>
                     
             <img 
-              src="./src/assets/ayb_logo.jpeg"  // Replace this URL with the actual path to your logo image
+              src="/ayb_logo.jpeg"  // Replace this URL with the actual path to your logo image
               alt="AYB Logo" 
               style={{ height: "80px" }}  // Adjust the height or other styles as needed
            />
