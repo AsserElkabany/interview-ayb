@@ -11,7 +11,7 @@ function Interviews_form() {
     try {
       const response = await supabase.from("interviews").insert([data]);
       console.log("Response from Supabase:", response); // Log full response
-  
+
       if (response.error) {
         console.error("Error inserting data:", response.error);
         toast.error(`Submission failed: ${response.error.message}`);
@@ -25,18 +25,16 @@ function Interviews_form() {
       toast.error("Unexpected error 😢");
     }
   };
-  
 
   return (
     <>
-       <header style={{ backgroundColor: "#8b0000", padding: "20px", color: "#fff", textAlign: "center" }}>
-                    
-            <img 
-              src="/ayb_logo.jpeg"  // Replace this URL with the actual path to your logo image
-              alt="AYB Logo" 
-              style={{ height: "80px" }}  // Adjust the height or other styles as needed
-           />
-       </header>
+      <header style={{ backgroundColor: "#8b0000", padding: "20px", color: "#fff", textAlign: "center" }}>
+        <img 
+          src="/ayb_logo.jpeg"  // Replace this URL with the actual path to your logo image
+          alt="AYB Logo" 
+          style={{ height: "80px" }}  // Adjust the height or other styles as needed
+        />
+      </header>
 
       <div className="form-container">
         <h1>AYB Interview Form</h1>
@@ -81,7 +79,15 @@ function Interviews_form() {
           </div>
           <div>
             <label>Team:</label>
-            <input type="text" {...register("team", { required: "Team is required" })} />
+            <select {...register("team", { required: "Team is required" })}>
+              <option value="">Select a team</option>
+              <option value="HR">HR</option>
+              <option value="PR&FR">PR & FR</option>
+              <option value="Media">Media</option>
+              <option value="R&D">R&D</option>
+              <option value="YDP">YDP</option>
+              <option value="Charity">Charity</option>
+            </select>
             {errors.team && <p>{errors.team.message}</p>}
           </div>
           <button type="submit">Submit</button>
