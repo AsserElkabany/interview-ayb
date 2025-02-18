@@ -99,6 +99,34 @@ p {
   margin-top: 5px;
 }
 
+/* Dropdown styling */
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #8b0000;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+select:focus {
+  border-color: #6b0000;
+  outline: none;
+}
+
+select option {
+  background-color: white;
+  color: #333;
+}
+
+select:hover {
+  background-color: #f4f4f4;
+}
+
+
 /* Submit button */
 button[type="submit"] {
   width: 100%;
